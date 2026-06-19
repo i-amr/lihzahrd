@@ -30,12 +30,40 @@ You can open a world file and get a `World` object by calling:
 
 ```python
 import lihzahrd
-world = lihzahrd.World.create_from_file("filename.wld")
+world = lihzahrd.World("filename.wld")
 ```
 
 It _will_ take a while to process: a small Terraria world contains more than 5 million tiles!
 
 Once you have a `World` object, you can use all data present in the save file by accessing [its attributes](http://gh.steffo.eu/lihzahrd/html/world.html).
+
+### rendering
+
+new method was added:
+```py
+def render(
+        self,
+        output_file: str = None,
+        draw_background: bool = True,
+        draw_blocks: bool = True,
+        draw_walls: bool = True,
+        draw_paint: bool = True,
+        draw_liquids: bool = True,
+        draw_wires: bool = False,
+    ):
+```
+#### example usage
+```py
+my_world =
+    lihzahrd
+        .World("Tainted_Terrain_of_Branches.wld")
+        .render(
+            "Tainted_Terrain_of_Branches.png",
+            draw_wires=True,
+        )
+```
+*expected result*
+![medium world](./Tainted_Terrain_of_Branches.png)
 
 > [!Warning]
 > 
