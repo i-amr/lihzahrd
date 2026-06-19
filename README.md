@@ -57,12 +57,13 @@ def render(
 my_world =
     lihzahrd
         .World("Tainted_Terrain_of_Branches.wld")
-        .render(
-            "Tainted_Terrain_of_Branches.png",
-            draw_wires=True,
-        )
+
+my_world.render(
+    "Tainted_Terrain_of_Branches.png",
+    draw_wires=True, // specify this, and leaving other flags to default 
+)
 ```
-*expected result*
+**expected result**
 ![medium world](./Tainted_Terrain_of_Branches.png)
 
 > [!Warning]
